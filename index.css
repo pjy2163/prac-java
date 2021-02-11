@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+}
+.one {
+  background-color: yellow;
+}
+.two {
+  background-color: skyblue;
+}
+.three {
+  background-color: violet;
+}
+
+h1 {
+  color: aliceblue;
+}

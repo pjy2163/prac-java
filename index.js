@@ -1,29 +1,23 @@
-const title = document.querySelector("#title");
-const superEventHandler = {
-  mouseover: function () {
-    title.innerText = "The mouse is here!";
-    title.style.color = colors[0];
-  },
 
-  mouseleave: function () {
-    title.innerText = "The mouse is gone!";
-    title.style.color = colors[1];
-  },
+const body = document.body;
 
-  resize: function () {
-    title.innerText = "You just resized!";
-    title.style.color = colors[2];
-  },
+const nWidth = window.innerWidth;
+const bigWidth = Math.floor(nWidth * 1.5);
+const smallWidth = Math.floor(nWidth * 0.8);
 
-  rightClick: function () {
-    title.innerText = "You was a right click!";
-    title.style.color = colors[3];
+function resize() {
+  const nWidth = window.innerWidth;
+
+  if (nWidth > bigWidth) {
+    body.className = "one";
+    console.log(body);
+  } else if (nWidth < smallWidth) {
+    body.className = "two";
+    console.log(body);
+  } else {
+    body.className = "three";
+    console.log(body);
   }
-};
-title.addEventListener("mouseover", superEventHandler.mouseover);
-title.addEventListener("mouseleave", superEventHandler.mouseleave);
-window.addEventListener("resize", superEventHandler.resize);
-window.addEventListener("rightClick", superEventHandler.rightClick);
+}
 
-function init() {}
-init();
+window.addEventListener("resize", resize);
